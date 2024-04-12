@@ -63,6 +63,8 @@ namespace DrawingsUIRebarColumnsFootings
         }
         private void CallCreateColumnAndPadFooting(double PositionX, double PositionY)
         {
+            //the user has to fill the fields indicating column profile and material
+            //the user has to fill the fields indicating pad footing size and material
             string columnProfile = ColumnsProfileTextBox.Text;
             string columnMaterialProfile = ColumnsMaterialsTextBox.Text;
             string padFootingSize = textBox_PadFooting_size.Text;
@@ -120,6 +122,7 @@ namespace DrawingsUIRebarColumnsFootings
             PadFooting.Name = "FOOTING";
             PadFooting.Profile.ProfileString = FootingSize;
             //LAS DIMENSIONES DE LA ZAPATA SON UN DOUBLE. HAY QUE CONVERTIRLAS A DOUBLE.
+            //in order to create pad footings, we need a double. So we convert the footing size string into a double
             PadFooting.Profile.ProfileString = double.Parse(FootingSize) + "*" + double.Parse(FootingSize); //"1500*1500";
             PadFooting.Material.MaterialString = FootingMaterial;
             PadFooting.Class = "8";
@@ -221,6 +224,7 @@ namespace DrawingsUIRebarColumnsFootings
             TeklaCreateDialog.Show();
         }
 
+        //Without this OnLoad function, there won't be any drawings loaded
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -276,6 +280,8 @@ namespace DrawingsUIRebarColumnsFootings
             return Result;
         }
 
+        /*in order to make this AddDrawingsToListView function work, we need to indicate in the designer that the "field" where there'll be the
+        available drawings is a listbox*/
         private void AddDrawingsToListView()
         {
             //List<Item> listView = new List<Item>();
