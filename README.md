@@ -16,3 +16,7 @@ You can also insert pad footings, choosing their size and material.
 
 The interface you should get should be like this:
 ![Browse-through_drawings-list-and-open-a-drawing-587x426](https://github.com/CoxOsbourne/DrawingsUIRebarColumnsFootingsDrawList/assets/52871020/5a5e3fb7-b0fe-4cf3-822c-70a55c08b9f6)
+
+I did it a bit differently, so you won't have the first raw with the save buttons...
+
+When I make it work, I'll upload it again.
